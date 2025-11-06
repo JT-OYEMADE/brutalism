@@ -1,4 +1,9 @@
-import { FaBars, FaUserCircle } from 'react-icons/fa';
+import { Textfield } from 'components/common/Textfield';
+import { BsTranslate } from 'react-icons/bs';
+import { FaBars, FaBell, FaUserCircle } from 'react-icons/fa';
+import { GoSearch } from 'react-icons/go';
+import { IoIosMail } from 'react-icons/io';
+import { RiSettings2Fill } from 'react-icons/ri';
 
 interface Navbarprops {
   setSidebarOpen: (val: boolean) => void;
@@ -15,17 +20,30 @@ const Navbar = ({ setSidebarOpen }: Navbarprops) => {
         <FaBars className='h-6 w-6' aria-hidden='true' />
       </button>
 
-      <div className='flex gap-x-4 justify-between items-center lg:w-full'>
-        <div></div>
-        <div className='flex gap-2 items-center'>
-          <FaUserCircle className='h-10 w-10' />
-          <div className='text-[10px] md:text-xs'>
-            <h5 className='font-bold'>
-              {/* {capitalizeFirstLetter(user?.firstName)} {capitalizeFirstLetter(user?.lastName)} */}
-            </h5>
-            <p className='mt-1'>Aggregator Code</p>
-            {/* <p>{aggregator?.aggregatorCode}</p> */}
-          </div>
+      <div className='flex gap-x-6 justify-between items-center lg:w-full'>
+        <div className='hidden lg:block'>
+          <Textfield
+            id='search'
+            placeholder='Search'
+            type='search'
+            className='w-32 md:w-48 lg:w-64 ring-0 focus:ring-0 border border-[#6F6F6F] bg-[#FAFAFA] px-3 py-2'
+            surfixIcon={<GoSearch className='w-4 h-4' />}
+          />
+        </div>
+        <div className='flex gap-4 items-center'>
+          <span className='border-2 border-[#3B3B3B] bg-white rounded-full p-2'>
+            <RiSettings2Fill className='h-4 w-4' />
+          </span>
+          <span className='border-2 border-[#3B3B3B] bg-white rounded-full p-2'>
+            <BsTranslate className='h-4 w-4' />
+          </span>
+          <span className='border-2 border-[#3B3B3B] bg-white rounded-full p-2'>
+            <IoIosMail className='h-4 w-4' />
+          </span>
+          <span className='border-2 border-[#3B3B3B] bg-white rounded-full p-2'>
+            <FaBell className='h-4 w-4' />
+          </span>
+          <FaUserCircle className='h-8 w-8' />
         </div>
       </div>
     </div>

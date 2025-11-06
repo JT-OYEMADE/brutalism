@@ -5,8 +5,14 @@
 import { useState, useRef, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import navItems from 'lib/constants/dashboardNavItems';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa6';
+import {
+  FaArrowDownLong,
+  FaArrowRightLong,
+  FaChevronDown,
+  FaChevronUp,
+} from 'react-icons/fa6';
 import { Textfield } from 'components/common/Textfield';
+import Button from 'components/common/Button';
 
 const NavMenu = () => {
   const location = useLocation();
@@ -56,7 +62,7 @@ const NavMenu = () => {
           </Link>
         </div>
 
-        <nav className='flex flex-1 flex-col mt-8'>
+        <nav className='flex flex-1 flex-col'>
           <ul role='list' className='flex flex-1 flex-col gap-y-7'>
             <li>
               <ul role='list' className='flex flex-col gap-y-2'>
@@ -65,14 +71,12 @@ const NavMenu = () => {
 
                   if (!sub) {
                     let isLinkActive = false;
-                    if (href)
-                      isLinkActive =
-                        href === location.pathname || location.pathname.includes(href);
+                    if (href) isLinkActive = href === location.pathname;
                     return (
                       <Link
                         to={href || '#'}
                         key={name}
-                        className={`flex gap-3 items-center justify-center text-sm w-[96%]`}>
+                        className={`flex gap-3 items-center justify-center text-sm w-[98%]`}>
                         <div
                           className={`w-[90%] flex gap-2 px-3 py-2 items-center h-full rounded ${
                             isLinkActive ? ' bg-white border border-[#858585]' : 'text-black'
@@ -108,7 +112,7 @@ const NavMenu = () => {
                         ref={(el) => {
                           submenuRefs.current[key || ''] = el;
                         }}
-                        className='flex flex-col gap-2 pl-10 overflow-hidden transition-all duration-300'
+                        className='flex flex-col gap-2 overflow-hidden transition-all duration-300'
                         style={{
                           maxHeight:
                             activeSubmenu === key
@@ -120,12 +124,13 @@ const NavMenu = () => {
                           return (
                             <li
                               key={submenuItem.name}
-                              className={`mx-6 px-4 rounded-2xl pb-1 ${
-                                isSubActive ? 'bg-[#296DDC80]' : ''
+                              className={`rounded w-[85%] mr-auto ml-4 px-5 py-2 ${
+                                isSubActive ? 'bg-white border border-[#858585]' : ''
                               }`}>
                               <Link
                                 to={submenuItem.href}
-                                className='text-xs text-black font-lato'>
+                                className='text-xs text-black font-lato flex items-center gap-1'>
+                                <span className='w-4 h-5'></span>
                                 {submenuItem.name}
                               </Link>
                             </li>
@@ -139,6 +144,13 @@ const NavMenu = () => {
             </li>
           </ul>
         </nav>
+      </div>
+      <div className='m-4 p-4 bg-white border border-[#858585] rounded'>
+        <h2 className='text-left text-xl font-semibold pb-2'>Upgrade to Pro</h2>
+        <p className='text-sm pb-4'>
+          Are you looking for more features? Check the Pro Version
+        </p>
+        <Button prefixIcon={<FaArrowRightLong className='w-3 h-3' />} label='Upgrade Now' />
       </div>
     </div>
   );

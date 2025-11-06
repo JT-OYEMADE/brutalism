@@ -72,7 +72,7 @@ const DashboardLayout = ({ children }: LayoutProps) => {
         </Transition>
 
         {/* Static sidebar for desktop */}
-        <div className='hidden lg:fixed lg:inset-y-0 lg:z-30 lg:flex lg:w-[270px]  lg:flex-col'>
+        <div className='hidden lg:fixed lg:inset-y-0 lg:z-30 lg:flex lg:w-[250px]  lg:flex-col'>
           <NavMenu />
         </div>
 
