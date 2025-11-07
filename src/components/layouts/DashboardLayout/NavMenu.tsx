@@ -1,12 +1,8 @@
-'use client';
-
-// import useLogout from 'hooks/auth/useLogout';
-// import { uselocation.pathname } from 'next/navigation';
+import Button from 'components/common/Button';
 import { useState, useRef, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import navItems from 'lib/constants/dashboardNavItems';
 import { FaArrowRightLong, FaChevronDown, FaChevronUp } from 'react-icons/fa6';
-import Button from 'components/common/Button';
 
 const NavMenu = () => {
   const location = useLocation();
@@ -139,7 +135,7 @@ const NavMenu = () => {
           </ul>
         </nav>
       </div>
-      <div className='m-4 p-4 bg-white border border-[#858585] rounded'>
+      <div className='m-4 p-4 bg-white border border-[#858585] rounded my-10'>
         <h2 className='text-left text-xl font-semibold pb-2'>Upgrade to Pro</h2>
         <p className='text-sm pb-4'>
           Are you looking for more features? Check the Pro Version

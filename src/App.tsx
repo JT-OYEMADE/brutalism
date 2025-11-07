@@ -1,16 +1,8 @@
-import Dashboard from 'pages/Dashboard';
-import { BrowserRouter } from 'react-router-dom';
-import DashboardLayout from 'components/layouts/DashboardLayout';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './routes';
 
 function App() {
-  return (
-    <BrowserRouter>
-      {/* Switch routes here */}
-      <DashboardLayout>
-        <Dashboard />
-      </DashboardLayout>
-    </BrowserRouter>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

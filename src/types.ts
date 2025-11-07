@@ -1,5 +1,5 @@
 export type LayoutProps = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 type BaseInputProps = {
@@ -50,4 +50,19 @@ export interface TableProps {
   data: any;
   onRowClick?: (row: any) => void;
   actions?: (row: any) => React.ReactNode;
+}
+
+export interface CheckboxProps {
+  label?: string;
+  id?: string;
+  checked?: boolean;
+  register?: any;
+  className?: string;
+  labelClassName?: string;
+  disabled?: boolean;
+  error?: any;
+  variant?: 'primary' | 'secondary';
+  // onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: React.MouseEvent<HTMLInputElement>) => void;
+  onClick?: (e: React.MouseEvent<HTMLInputElement>) => void;
 }

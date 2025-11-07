@@ -1,12 +1,11 @@
 import Navbar from './Navbar';
 import NavMenu from './NavMenu';
-import { useLocation } from 'react-router-dom';
-import type { LayoutProps } from 'types';
-import { Fragment, useEffect, useState } from 'react';
 import { IoCloseSharp } from 'react-icons/io5';
+import { Outlet, useLocation } from 'react-router-dom';
+import { Fragment, useEffect, useState } from 'react';
 import { Dialog, Transition, TransitionChild, DialogPanel } from '@headlessui/react';
 
-const DashboardLayout = ({ children }: LayoutProps) => {
+const DashboardLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
   const location = useLocation();
 
@@ -78,14 +77,7 @@ const DashboardLayout = ({ children }: LayoutProps) => {
           <Navbar setSidebarOpen={setSidebarOpen} />
           <main className='pt-4 lg:pt-0 pb-20 md:px-6 lg:px-0'>
             <div className='px-4 lg:pl-[17rem] lg:pr-8'>
-              {/* {!aggregator ? (
-                <div className='mt-60'>
-                  <LoadingSpinner />
-                </div>
-              ) : (
-                children
-              )} */}
-              {children}
+              <Outlet />
             </div>
           </main>
         </div>
@@ -95,4 +87,3 @@ const DashboardLayout = ({ children }: LayoutProps) => {
 };
 
 export default DashboardLayout;
-// export default WithAuth(DashboardLayout);

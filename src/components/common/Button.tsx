@@ -1,6 +1,15 @@
-const Button = ({ prefixIcon, label }: { prefixIcon: React.ReactElement; label: string }) => {
+const Button = ({
+  prefixIcon,
+  label,
+  className,
+}: {
+  prefixIcon: React.ReactElement;
+  label: string;
+  className?: string;
+}) => {
   return (
-    <button className='bg-[#D7F995] rounded-lg w-full py-3 text-sm lg:text-lg font-medium flex items-center justify-center gap-2 hover:bg-gray-300 transition-colors transition-all duration-700 ease-[cubic-bezier(0.2,1,0.22,1)] border border-[#818379] hover:-translate-y-[1.5px]'>
+    <button
+      className={`bg-[#D7F995] rounded w-full py-3 text-sm lg:text-base font-medium flex items-center justify-center gap-2 hover:bg-gray-300 transition-all duration-700 ease-[cubic-bezier(0.2,1,0.22,1)] border border-[#818379] hover:-translate-y-[1.5px] ${className}`}>
       {prefixIcon} {label}
     </button>
   );
