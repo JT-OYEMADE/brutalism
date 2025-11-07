@@ -1,12 +1,10 @@
 import Navbar from './Navbar';
 import NavMenu from './NavMenu';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import type { LayoutProps } from 'types';
 import { Fragment, useEffect, useState } from 'react';
 import { IoCloseSharp } from 'react-icons/io5';
-import NotificationBar from 'components/common/NotificationBar';
 import { Dialog, Transition, TransitionChild, DialogPanel } from '@headlessui/react';
-import { SlideInAnimation } from 'components/common/SlideInAnimation';
 
 const DashboardLayout = ({ children }: LayoutProps) => {
   const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
@@ -79,7 +77,7 @@ const DashboardLayout = ({ children }: LayoutProps) => {
         <div className=''>
           <Navbar setSidebarOpen={setSidebarOpen} />
           <main className='pt-4 lg:pt-0 pb-20 md:px-6 lg:px-0'>
-            <div className='px-4 lg:pl-[19rem] lg:pr-10'>
+            <div className='px-4 lg:pl-[17rem] lg:pr-8'>
               {/* {!aggregator ? (
                 <div className='mt-60'>
                   <LoadingSpinner />

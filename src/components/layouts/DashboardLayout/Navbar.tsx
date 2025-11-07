@@ -11,7 +11,7 @@ interface Navbarprops {
 
 const Navbar = ({ setSidebarOpen }: Navbarprops) => {
   return (
-    <div className='border-b border-[#989B98] w-full px-4 lg:pl-[19rem] lg:pr-10 sticky top-0 z-20 flex justify-between h-full shrink-0 items-center gap-x-4 bg-[#F5F5F5] shadow-lgs sm:gap-x-6 sm:px-6  py-2 lg:py-3'>
+    <div className='border-b border-[#989B98] w-full px-4 lg:pl-[17rem] lg:pr-8 sticky top-0 z-20 flex justify-between h-full shrink-0 items-center gap-x-4 bg-[#F5F5F5] shadow-lgs sm:gap-x-6 sm:px-6  py-2 lg:py-3'>
       <button
         type='button'
         className='-m-2.5 p-2.5 text-gray-700 lg:hidden'

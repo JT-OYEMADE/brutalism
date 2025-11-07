@@ -5,13 +5,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import navItems from 'lib/constants/dashboardNavItems';
-import {
-  FaArrowDownLong,
-  FaArrowRightLong,
-  FaChevronDown,
-  FaChevronUp,
-} from 'react-icons/fa6';
-import { Textfield } from 'components/common/Textfield';
+import { FaArrowRightLong, FaChevronDown, FaChevronUp } from 'react-icons/fa6';
 import Button from 'components/common/Button';
 
 const NavMenu = () => {
