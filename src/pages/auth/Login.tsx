@@ -2,6 +2,7 @@ import Button from 'components/common/Button';
 import { Textfield } from 'components/common/Textfield';
 import { useLogin } from 'hooks/login';
 import { RiEyeLine, RiEyeOffLine } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const {
@@ -28,7 +29,7 @@ const Login = () => {
             <p className='text-sm text-[#868C98]'>Enter necessary information below</p>
           </div>
           <div className='mt-6 pb-4'>
-            <form onSubmit={handleSubmit(onSubmit)} noValidate>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className='mt-4'>
                 <Textfield
                   id='email'
@@ -69,6 +70,12 @@ const Login = () => {
                 </Link> */}
               </div>
               <Button label='Log In' type='submit' disabled={!isFormValid} />
+              <p className='mt-2 text-sm text-center'>
+                Don&apos;t have an account?{' '}
+                <Link to='/register' className='text-[#D2F774]'>
+                  Create an account
+                </Link>
+              </p>
             </form>
           </div>
         </div>
