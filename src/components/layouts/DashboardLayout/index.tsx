@@ -75,8 +75,8 @@ const DashboardLayout = () => {
 
         <div className=''>
           <Navbar setSidebarOpen={setSidebarOpen} />
-          <main className='pt-4 lg:pt-0 pb-20 md:px-6 lg:px-0'>
-            <div className='px-4 lg:pl-[17rem] lg:pr-8'>
+          <main className='pt-4 lg:pt-0 pb-20  lg:px-0'>
+            <div className='px-4 lg:pl-[17rem] md:px-6 lg:pr-8'>
               <Outlet />
             </div>
           </main>

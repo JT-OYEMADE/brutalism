@@ -13,11 +13,11 @@ const Dashboard = () => {
   ];
   return (
     <div className='space-y-8'>
-      <div className='flex justify-between items-center mt-5'>
+      <div className='flex flex-col md:flex-row md:justify-between md:items-center md:mt-5'>
         <div>
           <h2 className='text-2xl font-semibold text-black'>Marketing</h2>
         </div>
-        <div className='flex border border-[#7F7F7F] w-fit divide-x divide-[#7F7F7F]'>
+        <div className='flex border border-[#7F7F7F] w-fit divide-x divide-[#7F7F7F] mt-3 md:mt-0'>
           {timeRanges.map((range) => (
             <button
               onClick={() => setTimeRange(range.value)}
@@ -31,27 +31,27 @@ const Dashboard = () => {
         </div>
       </div>
       {/* one */}
-      <div className='flex gap-4 w-full'>
-        <div className='w-1/2 grid grid-cols-2 gap-4'>
+      <div className='flex flex-col md:flex-row gap-4 w-full'>
+        <div className='w-full md:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4'>
           <SummaryCard />
           <SummaryCard />
           <SummaryCard />
           <SummaryCard />
         </div>
-        <div className='w-1/2'>
+        <div className='w-full md:w-1/2'>
           <div className='border border-[#787878] p-4 bg-white'>
             <AcquisitionChart />
           </div>
         </div>
       </div>
       {/* two */}
-      <div className='flex gap-4 w-full'>
-        <div className='w-1/2'>
-          <div className='border border-[#787878] p-4 bg-white'>
+      <div className='flex  flex-col md:flex-row gap-4 w-full'>
+        <div className='w-full md:w-1/2'>
+          <div className='border border-[#787878] p-2 md:p-4 bg-white'>
             <TrafficSource />
           </div>
         </div>
-        <div className='w-1/2 '>
+        <div className='w-full md:w-1/2'>
           <div className='border border-[#787878] p-4 bg-white h-full'>
             <BudgetByPlatform />
           </div>

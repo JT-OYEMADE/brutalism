@@ -30,7 +30,7 @@ const Navbar = ({ setSidebarOpen }: Navbarprops) => {
             surfixIcon={<GoSearch className='w-4 h-4' />}
           />
         </div>
-        <div className='flex gap-4 items-center'>
+        <div className='flex gap-3 items-center'>
           <span className='border-2 border-[#3B3B3B] bg-white rounded-full p-2'>
             <RiSettings2Fill className='h-4 w-4' />
           </span>

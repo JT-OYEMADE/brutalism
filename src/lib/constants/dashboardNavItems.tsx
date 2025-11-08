@@ -1,3 +1,10 @@
+import { GrAnnounce } from 'react-icons/gr';
+import { IoIosApps } from 'react-icons/io';
+import { IoAnalyticsOutline } from 'react-icons/io5';
+import { LuBriefcaseBusiness } from 'react-icons/lu';
+import { MdCorporateFare } from 'react-icons/md';
+import { RiAppsLine, RiBookletLine, RiDoorLine, RiUserLine } from 'react-icons/ri';
+import { RxComponent1 } from 'react-icons/rx';
 import { SiGooglemarketingplatform } from 'react-icons/si';
 
 interface SubMenuItem {
@@ -18,17 +25,17 @@ const navItems: NavItem[] = [
   {
     name: 'Marketing',
     href: '/',
-    icon: <SiGooglemarketingplatform className='w-5 h-5' />,
+    icon: <GrAnnounce className='w-5 h-5' />,
   },
   {
     name: 'Analytics',
     href: '/analytics',
-    icon: <SiGooglemarketingplatform className='w-5 h-5' />,
+    icon: <IoAnalyticsOutline className='w-5 h-5' />,
   },
   {
     name: 'Business',
     href: '/business',
-    icon: <SiGooglemarketingplatform className='w-5 h-5' />,
+    icon: <LuBriefcaseBusiness className='w-5 h-5' />,
   },
   {
     name: 'Project',
@@ -38,29 +45,29 @@ const navItems: NavItem[] = [
   {
     name: 'HRM',
     href: '/hrm',
-    icon: <SiGooglemarketingplatform className='w-5 h-5' />,
+    icon: <MdCorporateFare className='w-5 h-5' />,
   },
   {
     name: 'Mobile App',
     href: '/mobile-app',
-    icon: <SiGooglemarketingplatform className='w-5 h-5' />,
+    icon: <RiAppsLine className='w-5 h-5' />,
   },
   {
     name: 'Components',
     key: '/components',
-    icon: <SiGooglemarketingplatform className='w-5 h-5' />,
+    icon: <RxComponent1 className='w-5 h-5' />,
     sub: [],
   },
   {
     name: 'Pages',
     key: '/pages',
-    icon: <SiGooglemarketingplatform className='w-5 h-5' />,
+    icon: <RiDoorLine className='w-5 h-5' />,
     sub: [],
   },
   {
     name: 'Apps',
     key: '/apps',
-    icon: <SiGooglemarketingplatform className='w-5 h-5' />,
+    icon: <IoIosApps className='w-5 h-5' />,
     sub: [
       {
         name: 'Calendar',
@@ -87,13 +94,13 @@ const navItems: NavItem[] = [
   {
     name: 'Users',
     key: '/users',
-    icon: <SiGooglemarketingplatform className='w-5 h-5' />,
+    icon: <RiUserLine className='w-5 h-5' />,
     sub: [],
   },
   {
     name: 'Documentations',
     key: '/documentations',
-    icon: <SiGooglemarketingplatform className='w-5 h-5' />,
+    icon: <RiBookletLine className='w-5 h-5' />,
     sub: [],
   },
 ];

@@ -27,20 +27,26 @@ const Email = () => {
     { id: 'office', label: 'Office', icon: <HiOutlineTag className='w-4 h-4' /> },
   ];
   return (
-    <div className='flex gap-5 w-full h-screen bg-white border border-[#A4A4A4] rounded-md p-6 mt-5'>
+    <div className='flex gap-5 md:gap-10 w-full bg-white border border-[#A4A4A4] rounded-md p-4 md:p-6 mt-5 mb-8'>
       <div className='w-[15%]'>
         <div>
-          <div className='flex gap-2 items-center mb-4'>
+          <div className='flex gap-2 items-center mb-9 md:mb-4'>
             <FaUserCircle className='h-9 w-9' />
-            <div>
-              <h3 className='text-[#484848] text-sm font-semibold'>Ari Budin</h3>
-              <p className='text-[#ABABB2] text-xs'>Web developer</p>
+            <div className='hidden md:block'>
+              <h3 className='text-[#484848] text-xs md:text-sm font-semibold'>Ari Budin</h3>
+              <p className='text-[#ABABB2] hidden md:block text-[10px] md:text-xs'>
+                Web developer
+              </p>
             </div>
           </div>
           <Button
             prefixIcon={<BiSolidEdit className='w-4 h-4 !text-[#222E12]' />}
             label='Compose'
-            className='!px-3 !py-2 !text-sm'
+            className='!px-3 !py-2 !text-sm hidden md:flex'
+          />
+          <Button
+            label={<BiSolidEdit className='w-4 h-4 !text-[#222E12]' />}
+            className='!px-3 !py-2 !text-sm block md:hidden'
           />
         </div>
         <div>
@@ -52,16 +58,16 @@ const Email = () => {
                   key={folder.id}
                   onClick={() => setSelectedFolder(folder.id)}
                   className={cn(
-                    'flex items-center gap-2 text-sm cursor-pointer py-2 justify-normal  px-3',
+                    'flex justify-center items-center gap-2 text-sm cursor-pointer py-2 md:justify-normal  px-3',
                     isSelected
-                      ? 'border border-[#A7A7A7] bg-[#F5F5F5] justify-between rounded'
+                      ? 'border border-[#A7A7A7] bg-[#F5F5F5] justify-center md:justify-between rounded'
                       : ''
                   )}>
-                  <div className={`flex items-center gap-2 text-sm`}>
+                  <div className={`flex justify-center items-center gap-2 text-sm`}>
                     <span>{folder.icon}</span>
-                    <span>{folder.label}</span>
+                    <span className='hidden md:block'>{folder.label}</span>
                   </div>
-                  <div className='text-[10px]'>{folder.count}</div>
+                  <div className='text-[10px] hidden md:block'>{folder.count}</div>
                 </div>
               );
             })}
@@ -75,14 +81,14 @@ const Email = () => {
                   key={label.id}
                   onClick={() => setSelectedFolder(label.id)}
                   className={cn(
-                    'flex items-center gap-2 text-sm cursor-pointer py-2 justify-normal  px-3',
+                    'flex justify-center items-center gap-2 text-sm cursor-pointer py-2 md:justify-normal  px-3',
                     isSelected
-                      ? 'border border-[#A7A7A7] bg-[#F5F5F5] justify-between rounded'
+                      ? 'border border-[#A7A7A7] bg-[#F5F5F5] justify-center md:justify-between rounded'
                       : ''
                   )}>
                   <div className={`flex items-center gap-2 text-sm`}>
                     <span>{label.icon}</span>
-                    <span>{label.label}</span>
+                    <span className='hidden md:block'>{label.label}</span>
                   </div>
                 </div>
               );

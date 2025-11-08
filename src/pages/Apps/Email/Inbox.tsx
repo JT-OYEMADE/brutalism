@@ -3,6 +3,7 @@ import { Textfield } from 'components/common/Textfield';
 import { GoSearch } from 'react-icons/go';
 import { IoRefreshOutline } from 'react-icons/io5';
 import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri';
+import { TiStarFullOutline } from 'react-icons/ti';
 
 const Inbox = () => {
   return (
@@ -27,7 +28,7 @@ const Inbox = () => {
           </span>
         </div>
         <div className='flex gap-4 items-center'>
-          <div>1-15 of 165</div>
+          <div className='text-sm'>1-15 of 165</div>
           <div className='flex gap-1'>
             <span className='h-8 w-8 border border-[#888888] flex justify-center items-center rounded-full p-1.5 bg-[#F5F5F5]'>
               <RiArrowLeftSLine className='w-5 h-5' />
@@ -38,6 +39,25 @@ const Inbox = () => {
           </div>
         </div>
       </div>
+      {[...Array(10)].map((_, index) => (
+        <div
+          key={index}
+          className='border-b border-[#5C5A5A] flex justify-between gap-2 md:gap-10 cursor-pointer py-2'>
+          <div className='w-[10%] flex items-center justify-between'>
+            <Checkbox className='!w-auto' />
+            <TiStarFullOutline className='w-4 h-4' />
+          </div>
+          <div className='w-[70%] text-xs md:text-sm'>
+            <h4 className=' font-semibold'>Nuno Affilliate</h4>
+            <p className='hidden md:block'>Your application to the Nuno Affilliate Network</p>
+            <p className='block md:hidden'>Your application to the Nuno...</p>
+          </div>
+
+          <div className='w-[20%] flex justify-center items-center'>
+            <p className='text-xs md:text-sm'>Yesterday</p>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
