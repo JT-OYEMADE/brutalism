@@ -22,7 +22,8 @@ export const ProfileDropDown = () => {
       <Menu as='div' className='relative'>
         <div>
           <MenuButton className='relative flex'>
-            <div className={`w-fit flex justify-center items-center gap-3 cursor-pointer `}>
+            <div
+              className={`w-fit flex justify-center items-center gap-3 cursor-pointer focus:outline-none outline-none ring-0 focus:ring-0`}>
               {!!avatar ? (
                 <img
                   src={`/images/${avatar}`}
