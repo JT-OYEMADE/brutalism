@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronRightIcon } from '@heroicons/react/24/solid';
 import { Menu, MenuButton, MenuItems, Transition } from '@headlessui/react';
+import { TbSquareRoundedChevronRightFilled } from 'react-icons/tb';
 
 export const ProfileDropDown = () => {
   const navigate = useNavigate();
@@ -67,7 +67,7 @@ export const ProfileDropDown = () => {
                 }}>
                 <p className='text-[12px]'>{isSigningOut ? 'Signing Out...' : 'Sign Out'}</p>
                 <span className='flex h-5 w-5 justify-center items-center bg-black rounded-full'>
-                  <ChevronRightIcon className='text-white h-3 w-3' />
+                  <TbSquareRoundedChevronRightFilled className='text-white h-3 w-3' />
                 </span>
               </div>
             </div>
