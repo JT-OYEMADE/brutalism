@@ -1,6 +1,7 @@
+import { ProfileDropDown } from 'components/common/ProfileDropDown';
 import { Textfield } from 'components/common/Textfield';
 import { BsTranslate } from 'react-icons/bs';
-import { FaBars, FaBell, FaUserCircle } from 'react-icons/fa';
+import { FaBars, FaBell } from 'react-icons/fa';
 import { GoSearch } from 'react-icons/go';
 import { IoIosMail } from 'react-icons/io';
 import { RiSettings2Fill } from 'react-icons/ri';
@@ -43,7 +44,7 @@ const Navbar = ({ setSidebarOpen }: Navbarprops) => {
           <span className='border-2 border-[#3B3B3B] bg-white rounded-full p-2'>
             <FaBell className='h-4 w-4' />
           </span>
-          <FaUserCircle className='h-8 w-8' />
+          <ProfileDropDown />
         </div>
       </div>
     </div>
