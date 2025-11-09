@@ -49,7 +49,7 @@ export const ProfileDropDown = () => {
           leaveFrom='transform opacity-100 scale-100'
           leaveTo='transform opacity-0 scale-95'>
           <MenuItems
-            className={`absolute sm:right-0  z-10 mt-2 w-[230px] origin-top-right rounded-xl bg-white pb-8 shadow-xl
+            className={`absolute focus:outline-none outline-none ring-0 focus:ring-0 sm:right-0  z-10 mt-2 w-[230px] origin-top-right rounded-xl bg-white pb-8 shadow-xl
               right-0
           `}>
             <div className='bg-gray-100 border border-primary-light px-4 pt-6 pb-3 rounded-tr-xl rounded-tl-xl'>
