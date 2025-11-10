@@ -1,11 +1,55 @@
-# React + TypeScript + Vite
+# Welcome to the ✨ Email Dashboard ✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern email management application built with React Vite featuring search, filtering, pagination, and performance optimizations.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Authentication**: Mock token-based authentication with sign-in/sign-out
+- **Email List**: Display emails with sender, subject, and timestamp
+- **Search**: Debounced search across sender and subject fields (300ms delay)
+- **Filtering**: Filter by folder and starred emails
+- **Pagination**: Client-side pagination with 10 emails per page
+- **Performance Optimizations**:
+  - Response caching with TanStack Query
+  - Debounced search input to reduce re-renders
+  - Memoized email components
+  - Memoized filtered/paginated lists with useMemo
+  - Background data refetching for stale-while-revalidate pattern
+- **Responsive Design**: Mobile-friendly layout with accessible UI
+- **Accessibility**: Proper ARIA labels, semantic HTML, and keyboard navigation support
+
+## Architecture
+
+### Structure
+- **AuthPage**: Manages user authentication (mocked)
+- **Layout**: Dashboard layout container
+- **Component**: Divided into common, dashboard and layouts
+- **Hooks**: Brain of the application, encapsulating all business logic, state management, and side effects in reusable, testable units.
+- **Sidebar**: For folder navigation
+- **SearchBar**: Debounced search input
+- **EmailList**: Displays emails with pagination and memoization
+
+### Data Fetching Strategy
+- **Caching**: Stores results using TanStack Query
+- **Background Refetching**: Updates data in background while using cache
+- **API**: https://email-list-api-3.onrender.com
+
+## Performance Decisions
+
+1. **Client-side Pagination**: Chosen for simplicity and instant page transitions without network requests
+2. **Debounced Search**: 300ms debounce reduces re-renders while maintaining responsive feel
+3. **Component Memoization**: EmailRow and filtered/paginated lists memoized to prevent unnecessary re-renders
+4. **LocalStorage Caching**: Provides instant load and offline capability with background sync
+5. **Lazy Component Rendering**: Pagination ensures only 10 items render at once
+
+
+## Future Improvements
+
+- Add email detail view
+- Implement backend pagination
+- Add real authentication
+- Add email composition and sending
+
 
 ## Expanding the ESLint configuration
 

@@ -1,10 +1,8 @@
-'use client';
-
+import { Link } from 'react-router-dom';
 import { useRegister } from 'hooks/register';
 import Button from 'components/common/Button';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { Textfield } from 'components/common/Textfield';
-import { Link } from 'react-router-dom';
 
 const Register = () => {
   const {

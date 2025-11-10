@@ -1,5 +1,3 @@
-'use client';
-
 import type { LayoutProps } from 'types';
 import React, { useEffect } from 'react';
 import { useAnimation, motion } from 'framer-motion';

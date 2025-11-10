@@ -1,9 +1,9 @@
-import DashboardLayout from 'components/layouts/DashboardLayout';
-import Email from 'pages/Apps/Email';
+import Email from 'pages/apps/Email';
 import Login from 'pages/auth/Login';
-import Register from 'pages/auth/Register';
 import Dashboard from 'pages/Dashboard';
+import Register from 'pages/auth/Register';
 import { createBrowserRouter } from 'react-router-dom';
+import DashboardLayout from 'components/layouts/DashboardLayout';
 
 export const router = createBrowserRouter([
   {

@@ -1,3 +1,4 @@
+import { SlideInAnimation } from 'components/common/SlideInAnimation';
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 
 const data = [
@@ -14,20 +15,22 @@ const colors = ['#E5F5D5', '#CFEAAC', '#B6E081', '#9ED554', '#81CB3D'];
 
 export const TrafficSource = () => {
   return (
-    <div className=''>
-      <h3 className='text-lg font-semibold text-foreground mb-4'>Traffic Source</h3>
-      <ResponsiveContainer width='100%' height={300}>
-        <BarChart data={data}>
-          {/* <CartesianGrid strokeDasharray='3 3' stroke='#e5e7eb' /> */}
-          <XAxis dataKey='date' stroke='#6b7280' />
-          <YAxis stroke='#6b7280' />
-          <Bar dataKey='organic' stackId='a' fill={colors[4]} />
-          <Bar dataKey='direct' stackId='a' fill={colors[3]} />
-          <Bar dataKey='referral' stackId='a' fill={colors[2]} />
-          <Bar dataKey='custom' stackId='a' fill={colors[1]} />
-          <Bar dataKey='social' stackId='a' fill={colors[0]} />
-        </BarChart>
-      </ResponsiveContainer>
-    </div>
+    <SlideInAnimation>
+      <div className=''>
+        <h3 className='text-lg font-semibold text-foreground mb-4'>Traffic Source</h3>
+        <ResponsiveContainer width='100%' height={300}>
+          <BarChart data={data}>
+            {/* <CartesianGrid strokeDasharray='3 3' stroke='#e5e7eb' /> */}
+            <XAxis dataKey='date' stroke='#6b7280' />
+            <YAxis stroke='#6b7280' />
+            <Bar dataKey='organic' stackId='a' fill={colors[4]} />
+            <Bar dataKey='direct' stackId='a' fill={colors[3]} />
+            <Bar dataKey='referral' stackId='a' fill={colors[2]} />
+            <Bar dataKey='custom' stackId='a' fill={colors[1]} />
+            <Bar dataKey='social' stackId='a' fill={colors[0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+    </SlideInAnimation>
   );
 };

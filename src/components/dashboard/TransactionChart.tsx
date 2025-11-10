@@ -1,14 +1,13 @@
-import Selectfield from 'components/common/Selectfield';
-
 import {
-  ResponsiveContainer,
-  AreaChart,
   Area,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
+  AreaChart,
+  CartesianGrid,
+  ResponsiveContainer,
 } from 'recharts';
+import Selectfield from 'components/common/Selectfield';
 
 const data = [
   { day: 1, moneyIn: 10000000, moneyOut: 0 },
@@ -47,12 +46,12 @@ const TransactionChart = () => {
       <div className='mt-4 flex items-center gap-8'>
         <div className='flex gap-2 items-center'>
           <div className='w-3 h-3 bg-[#FFA726]'></div>
-          <span className='text-sm text-gray-400 text-xs'>Money In</span>
+          <span className=' text-gray-400 text-xs'>Money In</span>
           <span className='text-gray-500 text-xs md:text-md'>₦1,000,000</span>
         </div>
         <div className='flex gap-2 items-center'>
           <div className='w-3 h-3 bg-[#EF5350]'></div>
-          <span className='text-sm text-gray-400 text-xs'>Money Out</span>
+          <span className=' text-gray-400 text-xs'>Money Out</span>
           <span className='text-gray-500 text-xs md:text-md'>₦1,000,000</span>
         </div>
       </div>

@@ -1,12 +1,13 @@
 import {
-  LineChart,
   Line,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
+  LineChart,
+  CartesianGrid,
   ResponsiveContainer,
 } from 'recharts';
+import { SlideInAnimation } from 'components/common/SlideInAnimation';
 
 const data = [
   { date: 'March 1', acquisition: 240, cost: 20000 },
@@ -20,39 +21,41 @@ const data = [
 
 export const AcquisitionChart = () => {
   return (
-    <div className=''>
-      <h3 className='text-lg font-semibold text-foreground mb-4'>Acquisition vs Cost</h3>
-      <ResponsiveContainer width='100%' height={300}>
-        <LineChart data={data}>
-          <CartesianGrid strokeDasharray='3 3' stroke='#e5e7eb' />
-          <XAxis dataKey='date' stroke='#6b7280' />
-          <YAxis yAxisId='left' orientation='left' stroke='#6b7280' dataKey='acquisition' />
-          <YAxis yAxisId='right' orientation='right' dataKey='cost' />
-          <Tooltip
-            contentStyle={{
-              backgroundColor: '#f3f4f6',
-              border: '1px solid #d1d5db',
-              borderRadius: '8px',
-            }}
-          />
-          <Line
-            type='monotone'
-            dataKey='acquisition'
-            stroke='#3b82f6'
-            strokeWidth={2}
-            dot={false}
-            yAxisId='left'
-          />
-          <Line
-            type='monotone'
-            yAxisId='right'
-            dataKey='cost'
-            stroke='#22c55e'
-            strokeWidth={2}
-            dot={false}
-          />
-        </LineChart>
-      </ResponsiveContainer>
-    </div>
+    <SlideInAnimation>
+      <div className=''>
+        <h3 className='text-lg font-semibold text-foreground mb-4'>Acquisition vs Cost</h3>
+        <ResponsiveContainer width='100%' height={300}>
+          <LineChart data={data}>
+            <CartesianGrid strokeDasharray='3 3' stroke='#e5e7eb' />
+            <XAxis dataKey='date' stroke='#6b7280' />
+            <YAxis yAxisId='left' orientation='left' stroke='#6b7280' dataKey='acquisition' />
+            <YAxis yAxisId='right' orientation='right' dataKey='cost' />
+            <Tooltip
+              contentStyle={{
+                backgroundColor: '#f3f4f6',
+                border: '1px solid #d1d5db',
+                borderRadius: '8px',
+              }}
+            />
+            <Line
+              type='monotone'
+              dataKey='acquisition'
+              stroke='#3b82f6'
+              strokeWidth={2}
+              dot={false}
+              yAxisId='left'
+            />
+            <Line
+              type='monotone'
+              yAxisId='right'
+              dataKey='cost'
+              stroke='#22c55e'
+              strokeWidth={2}
+              dot={false}
+            />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+    </SlideInAnimation>
   );
 };

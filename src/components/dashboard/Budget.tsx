@@ -1,6 +1,7 @@
 import { BsBing } from 'react-icons/bs';
-import { FaFacebook, FaGoogle, FaTiktok } from 'react-icons/fa';
 import { RiTwitterXFill } from 'react-icons/ri';
+import { FaFacebook, FaGoogle, FaTiktok } from 'react-icons/fa';
+import { SlideInAnimation } from 'components/common/SlideInAnimation';
 
 interface PlatformBudget {
   name: string;
@@ -56,36 +57,40 @@ const platforms: PlatformBudget[] = [
 
 export const BudgetByPlatform = () => {
   return (
-    <div className=''>
-      <h3 className='text-lg font-semibold text-foreground mb-6'>Budget by Platform</h3>
-      <div className='space-y-4'>
-        {platforms.map((platform) => (
-          <div className='flex items-center gap-x-4'>
-            <div className='max-w-[10%]'>{platform.icon}</div>
-            <div className='w-[90%]'>
-              <div className='flex justify-between mb-1'>
-                <p className='text-sm text-muted-foreground'>
-                  Remaining: ${platform.remaining.toLocaleString()}
-                </p>
-                <p className='text-xs font-semibold text-foreground'>{platform.percentage}%</p>
-              </div>
-              <div>
-                <div
-                  className='w-full rounded-full h-2'
-                  style={{ backgroundColor: platform.fill }}>
+    <SlideInAnimation>
+      <div className=''>
+        <h3 className='text-lg font-semibold text-foreground mb-6'>Budget by Platform</h3>
+        <div className='space-y-4'>
+          {platforms.map((platform) => (
+            <div className='flex items-center gap-x-4'>
+              <div className='max-w-[10%]'>{platform.icon}</div>
+              <div className='w-[90%]'>
+                <div className='flex justify-between mb-1'>
+                  <p className='text-sm text-muted-foreground'>
+                    Remaining: ${platform.remaining.toLocaleString()}
+                  </p>
+                  <p className='text-xs font-semibold text-foreground'>
+                    {platform.percentage}%
+                  </p>
+                </div>
+                <div>
                   <div
-                    className={`h-2 rounded-full`}
-                    style={{
-                      width: `${platform.percentage}%`,
-                      backgroundColor: platform.color,
-                    }}
-                  />
+                    className='w-full rounded-full h-2'
+                    style={{ backgroundColor: platform.fill }}>
+                    <div
+                      className={`h-2 rounded-full`}
+                      style={{
+                        width: `${platform.percentage}%`,
+                        backgroundColor: platform.color,
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </SlideInAnimation>
   );
 };
