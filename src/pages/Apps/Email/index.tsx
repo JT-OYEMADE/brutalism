@@ -1,16 +1,20 @@
 import Button from 'components/common/Button';
 import { cn } from 'lib/constants/utils';
-import { useState } from 'react';
 import { BiSolidEdit } from 'react-icons/bi';
 import { FaInbox, FaUserCircle } from 'react-icons/fa';
 import { HiOutlineTag } from 'react-icons/hi';
 import { IoIosSend } from 'react-icons/io';
 import { IoTrashOutline } from 'react-icons/io5';
 import { RiDraftLine, RiInformationLine, RiStarLine } from 'react-icons/ri';
-import Inbox from './Inbox';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 const Email = () => {
-  const [selectedFolder, setSelectedFolder] = useState<string>('inbox');
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Extract current folder from URL pathname
+  const currentFolder = location.pathname.split('/').pop() || 'inbox';
+
   const folders = [
     { id: 'inbox', label: 'Inbox', icon: <FaInbox className='w-4 h-4' />, count: 24 },
     { id: 'starred', label: 'Starred', icon: <RiStarLine className='w-4 h-4' /> },
@@ -26,6 +30,10 @@ const Email = () => {
     { id: 'friends', label: 'Friends', icon: <HiOutlineTag className='w-4 h-4' /> },
     { id: 'office', label: 'Office', icon: <HiOutlineTag className='w-4 h-4' /> },
   ];
+
+  const handleFolderClick = (folderId: string) => {
+    navigate(`/apps/email/${folderId}`);
+  };
 
   return (
     <div className='flex gap-5 md:gap-10 w-full bg-white border border-[#A4A4A4] rounded-md p-4 md:p-6 mt-5 mb-8'>
@@ -53,13 +61,13 @@ const Email = () => {
         <div>
           <div className='mt-4'>
             {folders.map((folder) => {
-              const isSelected = selectedFolder === folder.id;
+              const isSelected = currentFolder === folder.id;
               return (
                 <div
                   key={folder.id}
-                  onClick={() => setSelectedFolder(folder.id)}
+                  onClick={() => handleFolderClick(folder.id)}
                   className={cn(
-                    'flex justify-center items-center gap-2 text-sm cursor-pointer py-2 md:justify-normal  px-3',
+                    'flex justify-center items-center gap-2 text-sm cursor-pointer py-2 md:justify-normal px-3',
                     isSelected
                       ? 'border border-[#A7A7A7] bg-[#F5F5F5] justify-center md:justify-between rounded'
                       : ''
@@ -76,13 +84,13 @@ const Email = () => {
           <div className='mt-4'>
             <h4 className='text-[#484848] text-sm font-semibold mb-1 pl-3'>Labels</h4>
             {labels.map((label) => {
-              const isSelected = selectedFolder === label.id;
+              const isSelected = currentFolder === label.id;
               return (
                 <div
                   key={label.id}
-                  onClick={() => setSelectedFolder(label.id)}
+                  onClick={() => handleFolderClick(label.id)}
                   className={cn(
-                    'flex justify-center items-center gap-2 text-sm cursor-pointer py-2 md:justify-normal  px-3',
+                    'flex justify-center items-center gap-2 text-sm cursor-pointer py-2 md:justify-normal px-3',
                     isSelected
                       ? 'border border-[#A7A7A7] bg-[#F5F5F5] justify-center md:justify-between rounded'
                       : ''
@@ -97,8 +105,11 @@ const Email = () => {
           </div>
         </div>
       </div>
-      <div className='w-[85%]'>{selectedFolder === 'inbox' && <Inbox />}</div>
+      <div className='w-[85%]'>
+        <Outlet />
+      </div>
     </div>
   );
 };
+
 export default Email;
