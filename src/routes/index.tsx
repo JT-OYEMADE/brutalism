@@ -1,5 +1,5 @@
 import Login from 'pages/auth/Login';
-import Email from 'pages/apps/Email/index';
+import Email from 'pages/apps/Email/layout';
 import Dashboard from 'pages/Dashboard';
 import Register from 'pages/auth/Register';
 import { createBrowserRouter } from 'react-router-dom';
