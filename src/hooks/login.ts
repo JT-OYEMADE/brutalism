@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { useMutation } from '@tanstack/react-query';
+import { login } from 'lib/actions/user';
 
 interface LoginFormData {
   email: string;
@@ -22,10 +24,22 @@ export const useLogin = () => {
     mode: 'onTouched',
   });
 
-  const onSubmit: any = ({ email, password }: LoginFormData) => {
-    console.log({ email, password }, 'login');
+  const loginMutation = useMutation({
+    mutationFn: login,
+    onSuccess: (data) => {
+      localStorage.setItem('token', data.token);
+      navigate('/');
+    },
+    onError: (error: unknown) => {
+      console.log(error);
+    },
+  });
 
-    navigate('/');
+  const onSubmit: any = (values: LoginFormData) => {
+    loginMutation.mutateAsync({
+      email: values.email,
+      password: values.password,
+    });
   };
 
   watch((data) => {
@@ -37,6 +51,7 @@ export const useLogin = () => {
     errors,
     onSubmit,
     isFormValid,
+    loginMutation,
     isPasswordVisible,
     register,
     setValue,

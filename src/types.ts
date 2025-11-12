@@ -2,6 +2,11 @@ export type LayoutProps = {
   children?: React.ReactNode;
 };
 
+export interface queryData {
+  page: number;
+  limit: number;
+}
+
 type BaseInputProps = {
   id: string;
   label?: string | React.ReactNode;
@@ -65,4 +70,21 @@ export interface CheckboxProps {
   // onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onChange?: (e: React.MouseEvent<HTMLInputElement>) => void;
   onClick?: (e: React.MouseEvent<HTMLInputElement>) => void;
+}
+
+export interface Email {
+  sender: string;
+  subject: string;
+  timestamp: string;
+  starred: boolean;
+}
+
+export interface EmailListProps {
+  emails: Email[];
+  isLoading: boolean;
+  error: string | null;
+  currentPage: number;
+  totalPages: number;
+  totalEmails: number;
+  onPageChange: (page: number) => void;
 }

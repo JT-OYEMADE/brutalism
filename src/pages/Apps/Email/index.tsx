@@ -26,6 +26,7 @@ const Email = () => {
     { id: 'friends', label: 'Friends', icon: <HiOutlineTag className='w-4 h-4' /> },
     { id: 'office', label: 'Office', icon: <HiOutlineTag className='w-4 h-4' /> },
   ];
+
   return (
     <div className='flex gap-5 md:gap-10 w-full bg-white border border-[#A4A4A4] rounded-md p-4 md:p-6 mt-5 mb-8'>
       <div className='w-[15%]'>

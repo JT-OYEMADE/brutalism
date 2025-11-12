@@ -10,6 +10,7 @@ const Login = () => {
     isPasswordVisible,
     isFormValid,
     onSubmit,
+    loginMutation,
     register,
     handleSubmit,
     setIsPasswordVisible,
@@ -69,7 +70,12 @@ const Login = () => {
                   <p className='mt-2'>Forgot Password?</p>
                 </Link> */}
               </div>
-              <Button label='Log In' type='submit' disabled={!isFormValid} />
+              <Button
+                label='Log In'
+                type='submit'
+                disabled={!isFormValid}
+                isLoading={loginMutation.isPending}
+              />
               <p className='mt-2 text-sm text-center'>
                 Don&apos;t have an account?{' '}
                 <Link to='/register' className='text-[#D2F774]'>
