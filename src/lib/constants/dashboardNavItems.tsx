@@ -75,7 +75,7 @@ const navItems: NavItem[] = [
       },
       {
         name: 'Email',
-        href: '/apps/email/inbox',
+        href: '/mail/email/inbox',
       },
       {
         name: 'Invoice',

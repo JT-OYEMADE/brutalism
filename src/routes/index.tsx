@@ -4,7 +4,7 @@ import Register from 'pages/auth/Register';
 import { createBrowserRouter } from 'react-router-dom';
 import DashboardLayout from 'components/layouts/DashboardLayout';
 import EmailLayout from 'components/layouts/EmailLayout';
-import Inbox from 'pages/apps/email/Inbox';
+import Inbox from 'pages/mail/email/Inbox';
 
 export const router = createBrowserRouter([
   {
@@ -24,11 +24,11 @@ export const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: '/apps/email',
+        path: '/mail/email',
         element: <EmailLayout />,
         children: [
           {
-            path: '/apps/email/inbox',
+            path: '/mail/email/inbox',
             element: <Inbox />,
           },
         ],

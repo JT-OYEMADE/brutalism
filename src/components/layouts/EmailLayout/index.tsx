@@ -33,7 +33,7 @@ const EmailLayout = () => {
   ];
 
   const handleFolderClick = (folderId: string) => {
-    navigate(`/apps/email/${folderId}`);
+    navigate(`/mail/email/${folderId}`);
   };
 
   return (
