@@ -4,7 +4,7 @@ import Register from 'pages/auth/Register';
 import { createBrowserRouter } from 'react-router-dom';
 import DashboardLayout from 'components/layouts/DashboardLayout';
 import EmailLayout from 'components/layouts/EmailLayout';
-import Inbox from 'pages/apps/Email/Inbox';
+import Inbox from 'pages/apps/email/Inbox';
 
 export const router = createBrowserRouter([
   {
