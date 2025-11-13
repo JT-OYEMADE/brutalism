@@ -65,6 +65,7 @@ export const ProfileDropDown = () => {
                 onClick={() => {
                   setIsSigningOut(true);
                   navigate('/login');
+                  localStorage.clear();
                 }}>
                 <p className='text-[12px]'>{isSigningOut ? 'Signing Out...' : 'Sign Out'}</p>
                 <span className='flex h-5 w-5 justify-center items-center bg-black rounded-full'>

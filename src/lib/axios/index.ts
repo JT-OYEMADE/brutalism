@@ -5,19 +5,16 @@ const client = axios.create({
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
-    'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
-    'Content-Security-Policy': 'default-src http:',
-    'X-Frame-Options': 'SAMEORIGIN',
-    'X-Content-Type-Options': 'nosniff',
-    'Referrer-Policy': 'strict-origin-when-cross-origin',
   },
 });
 
 // INTERCEPTORS
 client.interceptors.request.use(
-  async (config) => {
-    // interceptor logic goes here. e.g additional headers, request encryption, session management, etc.
-
+  (config) => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
     return config;
   },
   (error) => {
